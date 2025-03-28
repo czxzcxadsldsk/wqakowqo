@@ -1,0 +1,222 @@
+/* Establece un fondo oscuro, utilizando un color gris muy oscuro para el fondo */
+body {
+    font-family: 'San Francisco', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+    background-color: #1C1C1C;
+    color: #EAEAEA;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Centrando el contenido y dándole márgenes */
+h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #FFFFFF;
+    margin-top: 30px;
+}
+
+/* Formato de los inputs y botones para que se vean más suaves */
+div {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin: 30px auto;
+    width: 90%;
+    max-width: 600px;
+}
+
+/* Estilo para los inputs, ajustando el tamaño, bordes suaves y colores */
+input[type="text"], input[type="number"] {
+    background-color: #333;
+    border: 1px solid #444;
+    color: #EAEAEA;
+    padding: 10px;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Estilo para el campo de "Nombre del producto" (más ancho como una caja) */
+#product {
+    background-color: #333;
+    border: 1px solid #444;
+    color: #EAEAEA;
+    padding: 12px; /* Aumentamos el padding para hacerlo más grande */
+    border-radius: 8px;
+    font-size: 1rem;
+    width: 100%; /* Hacer que ocupe todo el ancho disponible */
+    max-width: 800px; /* Máximo ancho de 800px, se ajustará al tamaño de la pantalla */
+    box-sizing: border-box; /* Aseguramos que el padding no sobrepasará el tamaño definido */
+    transition: all 0.3s ease-in-out;
+}
+
+/* Enfoque (cuando el campo es seleccionado) */
+#product:focus {
+    border-color: #1D72B8;
+    outline: none;
+    box-shadow: 0 0 10px rgba(29, 114, 184, 0.7);
+}
+
+/* Nueva caja para la descripción del producto (más grande y con mayor altura) */
+#description {
+    background-color: #333;
+    border: 1px solid #444;
+    color: #EAEAEA;
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 1rem;
+    width: 100%; /* Asegura que ocupe todo el ancho disponible */
+    height: 200px; /* Aumentamos la altura de la caja de descripción */
+    max-width: 800px;
+    resize: vertical; /* Permite al usuario cambiar el tamaño verticalmente */
+    box-sizing: border-box;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Enfoque de la caja de descripción */
+#description:focus {
+    border-color: #1D72B8;
+    outline: none;
+    box-shadow: 0 0 10px rgba(29, 114, 184, 0.7);
+}
+
+/* Estilo para los campos numéricos y otros inputs */
+input[type="text"]:focus, input[type="number"]:focus {
+    border-color: #1D72B8;
+    outline: none;
+    box-shadow: 0 0 10px rgba(29, 114, 184, 0.7);
+}
+
+/* Botones */
+button {
+    background-color: #333;
+    color: #EAEAEA;
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+    background-color: #1D72B8;
+    transform: scale(1.05);
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+/* Botón Agregar Producto (verde) */
+button#addButton {
+    background-color: #28a745; /* Verde */
+    color: #FFFFFF;
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button#addButton:hover {
+    background-color: #218838; /* Verde más oscuro al pasar el mouse */
+    transform: scale(1.05);
+}
+
+button#addButton:active {
+    transform: scale(0.98);
+}
+
+/* Botón Generar PDF (celeste) */
+button#generatePDF {
+    background-color: #00bcd4; /* Celeste */
+    color: #FFFFFF;
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button#generatePDF:hover {
+    background-color: #0097a7; /* Celeste más oscuro al pasar el mouse */
+    transform: scale(1.05);
+}
+
+button#generatePDF:active {
+    transform: scale(0.98);
+}
+
+/* Estilo de la tabla */
+table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #444;
+}
+
+th {
+    background-color: #333;
+    color: #EAEAEA;
+}
+
+td {
+    background-color: #222;
+    color: #EAEAEA;
+}
+
+/* Contenedor total */
+.total {
+    font-size: 1.5rem;
+    margin-top: 20px;
+    text-align: center;
+    color: #EAEAEA;
+}
+
+span#totalProfit {
+    font-weight: bold;
+    color: #1D72B8;
+}
+
+/* Para los campos de cotización */
+#quotationNumber {
+    background-color: #333;
+    border: 1px solid #444;
+    color: #EAEAEA;
+    padding: 10px;
+    font-size: 1rem;
+    border-radius: 8px;
+    width: 97%;
+    text-align: center;
+}
+
+/* Suavizar la transición de elementos */
+input, button {
+    transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Agregar un suavizado para las animaciones */
+@keyframes smoothFadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Animación de desvanecimiento al cargar los elementos */
+body {
+    animation: smoothFadeIn 1s ease-out;
+}

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Factura Automática</title>
+    <link rel="icon" href="fotoM.ico">
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <h1>Factura Automática de Matias</h1>
+    <div>
+        <label for="quotationNumber">Número de Cotización:</label>
+        <input type="text" id="quotationNumber" value="2025-0852">
+    </div>
+    <div>
+        <label for="contact">Para : (Contacto o Email):</label>
+        <input type="text" id="contact" placeholder="Ingrese nombre de contacto o email">
+    </div>
+    
+    <div>
+        <label for="product">Descripcion:</label>
+        <input type="text" id="product" placeholder="Descripcion del producto">
+        <label for="quantity">Cantidad:</label>
+        <input type="number" id="quantity" placeholder="Cantidad" min="1">
+        <label for="price">Precio Unitario:</label>
+        <input type="number" id="price" placeholder="Precio" step="0.01">
+        <button id="addButton">Agregar Producto</button>
+        <button id="generatePDF">Generar PDF</button>
+    </div>
+
+    <!-- Campo para el número de cotización -->
+
+    <table>
+        <thead>
+            <tr>
+                <th>Producto</th>
+                <th>Cantidad</th>
+                <th>Precio Unitario</th>
+                <th>Precio Total</th>
+            </tr>
+        </thead>
+        <tbody id="invoiceBody">
+            <!-- Las filas se agregarán dinámicamente aquí -->
+        </tbody>
+    </table>  
+
+    <div class="total">
+        Ganancia Total: $<span id="totalProfit">0.00</span>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.28/jspdf.plugin.autotable.min.js"></script>
+    <script src="index.js"></script>
+</body>
+</html>
