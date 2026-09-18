@@ -119,7 +119,7 @@ function actualizarAviso() {
     const ultima = leerUltimaEmitida();
     if (!ultima) {
         lastIssuedHint.textContent =
-            `Primera cotización desde esta computadora: arranca en ` +
+            `Primera cotización desde este dispositivo: arranca en ` +
             `${formatearNumero(calcularProximoNumero())} y de ahí sube sola.`;
         return;
     }
