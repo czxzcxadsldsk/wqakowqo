@@ -9,15 +9,28 @@
 </head>
 <body>
     <h1>Factura Automática de Matias</h1>
+
     <div>
         <label for="quotationNumber">Número de Cotización:</label>
-        <input type="text" id="quotationNumber" value="2025-0852">
+        <input type="text" id="quotationNumber" readonly>
+        <div class="fila">
+            <button id="editNumberButton" class="secundario" type="button">Corregir a mano</button>
+            <button id="resetNumberButton" class="secundario" type="button">Recalcular</button>
+            <button id="randomNumberButton" class="secundario" type="button">Número al azar</button>
+        </div>
+        <small id="lastIssuedHint" class="hint"></small>
     </div>
+
+    <div>
+        <label for="quotationDate">Fecha de la cotización:</label>
+        <input type="date" id="quotationDate">
+    </div>
+
     <div>
         <label for="contact">Para : (Contacto o Email):</label>
         <input type="text" id="contact" placeholder="Ingrese nombre de contacto o email">
     </div>
-    
+
     <div>
         <label for="product">Descripcion:</label>
         <input type="text" id="product" placeholder="Descripcion del producto">
@@ -27,9 +40,8 @@
         <input type="number" id="price" placeholder="Precio" step="0.01">
         <button id="addButton">Agregar Producto</button>
         <button id="generatePDF">Generar PDF</button>
+        <button id="newQuotationButton" class="secundario" type="button">Nueva cotización (vaciar lista)</button>
     </div>
-
-    <!-- Campo para el número de cotización -->
 
     <table>
         <thead>
@@ -38,12 +50,13 @@
                 <th>Cantidad</th>
                 <th>Precio Unitario</th>
                 <th>Precio Total</th>
+                <th>Acciones</th>
             </tr>
         </thead>
         <tbody id="invoiceBody">
             <!-- Las filas se agregarán dinámicamente aquí -->
         </tbody>
-    </table>  
+    </table>
 
     <div class="total">
         Ganancia Total: $<span id="totalProfit">0.00</span>
